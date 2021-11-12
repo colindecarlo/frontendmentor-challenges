@@ -7,6 +7,7 @@ html {
 body {
     background: url("./images/pattern-background-desktop.svg"), hsl(225, 100%, 94%);
     background-repeat: no-repeat;
+    /*background-size: cover;*/
 }
 
 .container {
@@ -39,7 +40,7 @@ body {
 .order-summary__text {
     margin: auto 4rem;
     color: hsl(224, 23%, 55%);
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 500;
     text-align: center;
     line-height: 1.25rem;
@@ -56,21 +57,30 @@ body {
     width: 100%;
     border: 0;
     padding: 1rem 0;
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 700;
     border-radius: 0.5rem;
     box-shadow: 0 0.75rem 1.5rem hsla(245, 75%, 52%, 0.35);
 }
 
+.order-summary__actions button:hover {
+    background: hsl(244, 83%, 68%);
+    cursor: pointer;
+}
+
 .order-summary__actions a {
     display: block;
     color: hsl(224, 23%, 55%);
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 700;
     margin-top: 1.5rem;
     text-align: center;
     text-decoration: none;
 }
+
+.order-summary__actions a:hover {
+     color: hsl(224, 35%, 21%);
+ }
 
 .plan {
     display: flex;
@@ -88,14 +98,14 @@ body {
 }
 
 .plan__title {
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: hsl(223, 47%, 23%);
     margin-bottom: 0.25rem;
     margin-top: 0;
 }
 
 .plan__detail {
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin-left: 1rem;
     color: hsl(224, 23%, 55%);
 }
@@ -106,12 +116,17 @@ body {
 }
 
 .plan__action {
-    font-size: 0.8rem;
+    font-size: 1rem;
+    font-weight: 700;
     color: hsl(245, 75%, 52%);
 }
 
 .plan__action a:visited {
-    font-size: 0.8rem;
     color: hsl(245, 75%, 52%);
+}
+
+.plan__action a:hover {
+    color: hsl(245, 56%, 66%);
+    text-decoration: none;
 }
 
