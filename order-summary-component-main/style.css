@@ -130,3 +130,24 @@ body {
     text-decoration: none;
 }
 
+@media screen and (max-width: 375px) {
+    .order-summary {
+        margin: 3rem auto 0;
+        width: 90vw;
+    }
+
+    .order-summary__text {
+        margin: auto 1.25rem;
+        line-height: 1.75rem;
+    }
+
+    .order-summary__actions {
+        margin: auto 1.25rem;
+    }
+
+    .plan {
+        margin: 1.5rem 1.25rem;
+    }
+
+}
+
