@@ -31,8 +31,10 @@ html {
 }
 
 .preview-card {
+    position: relative;
     color: var(--transparent-white);
     padding: 3rem;
+    min-height: 500px;
 }
 
 .preview-card p {
@@ -40,9 +42,10 @@ html {
 }
 
 .preview-card__cta {
+    position: absolute;
+    bottom: 2rem;
     display: inline-block;
     text-decoration: none;
-    margin-top: 5rem;
 
     border: solid 2px var(--light-grey);
     background: var(--light-grey);
