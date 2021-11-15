@@ -44,6 +44,7 @@ html {
     text-decoration: none;
     margin-top: 5rem;
 
+    border: solid 2px var(--light-grey);
     background: var(--light-grey);
     padding: 1rem 2rem;
     border-radius: 3rem;
@@ -53,12 +54,30 @@ html {
     color: var(--orange);
 }
 
+a:hover.preview-card__cta--orange {
+    border: solid 2px var(--light-grey);
+    background: var(--orange);
+    color: var(--light-grey)
+}
+
 .preview-card__cta--dark-cyan {
     color: var(--dark-cyan);
 }
 
+a:hover.preview-card__cta--dark-cyan {
+    border: solid 2px var(--light-grey);
+    background: var(--dark-cyan);
+    color: var(--light-grey)
+}
+
 .preview-card__cta--very-dark-cyan {
     color: var(--very-dark-cyan);
+}
+
+a:hover.preview-card__cta--very-dark-cyan {
+    border: solid 2px var(--light-grey);
+    background: var(--very-dark-cyan);
+    color: var(--light-grey)
 }
 
 .preview-card--orange {
