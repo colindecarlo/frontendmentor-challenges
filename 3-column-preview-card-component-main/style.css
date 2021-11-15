@@ -1,3 +1,11 @@
+:root {
+    --transparent-white: hsl(0, 0%, 100%, 0.75);
+    --light-grey: hsl(0, 0%, 95%);
+    --orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+}
+
 * {
     box-sizing: border-box;
 }
@@ -11,6 +19,7 @@ html {
     display: flex;
     align-items: center;
     height: 100vh;
+    background: var(--light-grey);
 }
 
 .preview-card-group {
@@ -22,7 +31,7 @@ html {
 }
 
 .preview-card {
-    color: hsla(0, 0%, 100%, 0.75);
+    color: var(--transparent-white);
     padding: 3rem;
 }
 
@@ -35,37 +44,44 @@ html {
     text-decoration: none;
     margin-top: 5rem;
 
-    background: hsl(0, 0%, 100%);
-    padding: 1rem 1.5rem;
+    background: var(--light-grey);
+    padding: 1rem 2rem;
     border-radius: 3rem;
 }
 
 .preview-card__cta--orange {
-    color: hsl(31, 77%, 52%);
+    color: var(--orange);
 }
 
 .preview-card__cta--dark-cyan {
-    color: hsl(184, 100%, 22%);
+    color: var(--dark-cyan);
 }
 
 .preview-card__cta--very-dark-cyan {
-    color: hsl(179, 100%, 13%);
+    color: var(--very-dark-cyan);
 }
 
 .preview-card--orange {
-    background: hsl(31, 77%, 52%);
+    background: var(--orange);
 }
 
 .preview-card--dark-cyan {
-    background: hsl(184, 100%, 22%);
+    background: var(--dark-cyan);
 }
 
 .preview-card--very-dark-cyan {
-    background: hsl(179, 100%, 13%);
+    background: var(--very-dark-cyan);
 }
 
 .preview-card__heading {
     font-family: 'Big Shoulders Display', cursive;
     text-transform: uppercase;
+    color: var(--light-grey);
 }
 
+@media screen and (max-width: 375px) {
+    .preview-card-group {
+        display: block;
+        width: 80vw;
+    }
+}
