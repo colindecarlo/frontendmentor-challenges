@@ -81,6 +81,7 @@ body {
 .profile-card__about-age {
     margin-left: .5rem;
     color: var(--light-grey);
+    font-weight: 400;
 }
 
 .profile-card__stats-group {
