@@ -3,6 +3,7 @@
     --dark-grey: hsl(229, 23%, 23%);
     --grey: hsl(0, 0%, 59%);
     --light-grey: hsl(252, 3%, 66%);
+    --aqua: hsl(185, 75%, 39%);
 }
 
 * {
@@ -15,15 +16,19 @@ html {
 }
 
 body {
-    background: hsl(185, 75%, 39%);
+    background: hsl(185, 15%, 84%);
 }
 
 .container {
+    background-repeat: no-repeat;
+    background-image: url("./images/bg-pattern-top.svg"), url("./images/bg-pattern-bottom.svg");
+    background-position: bottom 250px right 750px, top 380px left 715px;
+    background-color: var(--aqua);
     display: flex;
     justify-content: center;
     align-items: center;
     width: 1440px;
-    height: 100vh;
+    height: 720px;
     margin: auto;
 }
 
@@ -105,4 +110,16 @@ body {
 
 .profile-card__stat {
     text-align: center;
+}
+
+@media screen and (max-width: 375px) {
+    .container {
+        width: 375px;
+        height: 667px;
+        background-position: bottom 300px right 160px, top 300px left 150px;
+    }
+
+    .profile-card {
+        width: 85%;
+    }
 }
