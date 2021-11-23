@@ -1,30 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
-  <title>Frontend Mentor | FAQ Accordion Card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles.css">
+
+    <title>Frontend Mentor | FAQ Accordion Card</title>
 
 </head>
 <body>
-  How many team members can I invite?
-  You can invite up to 2 additional users on the Free plan. There is no limit on
-  team members for the Premium plan.
 
-  What is the maximum file upload size?
-  No more than 2GB. All files in your account must fit your allotted storage space.
+<div class="container">
+    <div class="faq-card">
+        <div class="faq-card__hero">
+            <img class="faq-card__hero-box" src="./images/illustration-box-desktop.svg" alt="">
+            <img class="faq-card__hero-main" src="./images/illustration-woman-online-desktop.svg" alt="">
+        </div>
+        <div class="faq-card__content">
+            <h1>FAQ</h1>
+            <dl>
+                <div class="faq-card__item active">
+                    <dt class="faq-card__question">
+                        How many team members can I invite?
+                        <button>
+                            <img width="10" height="7" src="./images/icon-arrow-down.svg" alt="">
+                        </button>
+                    </dt>
+                    <dd class="faq-card__answer">
+                        You can invite up to 2 additional users on the Free plan. There is no
+                        limit on
+                        team members for the Premium plan.
+                    </dd>
+                </div>
 
-  How do I reset my password?
-  Click “Forgot password” from the login page or “Change password” from your profile page.
-  A reset link will be emailed to you.
+                <div class="faq-card__item">
+                    <dt class="faq-card__question">
+                        What is the maximum file upload size?
+                        <button>
+                            <img width="10" height="7" src="./images/icon-arrow-down.svg" alt="">
+                        </button>
+                    </dt>
+                    <dd class="faq-card__answer">
+                        No more than 2GB. All files in your account must fit your allotted
+                        storage space.
+                    </dd>
+                </div>
 
-  Can I cancel my subscription?
-  Yes! Send us a message and we’ll process your request no questions asked.
+                <div class="faq-card__item">
+                    <dt class="faq-card__question">
+                        How do I reset my password?
+                        <button>
+                            <img width="10" height="7" src="./images/icon-arrow-down.svg" alt="">
+                        </button>
+                    </dt>
+                    <dd class="faq-card__answer">
+                        Click “Forgot password” from the login page or “Change password” from your
+                        profile page.
+                        A reset link will be emailed to you.
+                    </dd>
+                </div>
 
-  Do you provide additional support?
-  Chat and email support is available 24/7. Phone lines are open during normal business hours.
+                <div class="faq-card__item">
+                    <dt class="faq-card__question">
+                        Can I cancel my subscription?
+                        <button>
+                            <img width="10" height="7" src="./images/icon-arrow-down.svg" alt="">
+                        </button>
+                    </dt>
+                    <dd class="faq-card__answer">
+                        Yes! Send us a message and we’ll process your request no questions
+                        asked.
+                    </dd>
+                </div>
+
+                <div class="faq-card__item">
+                    <dt class="faq-card__question">
+                        Do you provide additional support?
+                        <button>
+                            <img width="10" height="7" src="./images/icon-arrow-down.svg" alt="">
+                        </button>
+                    </dt>
+                    <dd class="faq-card__answer">
+                        Chat and email support is available 24/7. Phone lines are open during
+                        normal business hours.
+                    </dd>
+                </div>
+            </dl>
+        </div>
+    </div>
+</div>
+
+<script>
+    const faqItems = document.querySelectorAll('.faq-card__item');
+
+    const onClick = (faqItem) => (event) => {
+        event.stopPropagation();
+        const wasActive = faqItem.classList.contains('active');
+        faqItem.classList.toggle('active');
+
+        if (wasActive) {
+            return;
+        }
+
+        let activeItem = Array.from(faqItems).find((candidate) => {
+            return candidate !== faqItem && candidate.classList.contains('active');
+        });
+
+        if (!activeItem) {
+            return;
+        }
+
+        activeItem.classList.toggle('active');
+    };
+
+    faqItems.forEach((item) => {
+        const button = item.querySelector('button');
+        const question = item.querySelector('.faq-card__question');
+
+        button.addEventListener('click', onClick(item));
+        question.addEventListener('click', onClick(item));
+    })
+</script>
 </body>
 </html>
