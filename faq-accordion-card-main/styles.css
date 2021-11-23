@@ -74,8 +74,12 @@ button:active {
     width: 50%;
 }
 
-.faq-card__hero-main {
+.faq-card__hero-main--desktop {
     margin-left: -75px;
+}
+
+.faq-card__hero-main--mobile {
+    display: none;
 }
 
 .faq-card__hero-box {
@@ -144,4 +148,50 @@ button:active {
     height: auto;
     padding-bottom: 1rem;
     margin-right: 2rem;
+}
+
+@media screen and (max-width: 375px) {
+    .faq-card {
+        display: block;
+        background-color: var(--white);
+        background-image: url("./images/bg-pattern-mobile.svg");
+        background-position: top;
+        background-repeat: no-repeat;
+        overflow: visible;
+        max-width: 325px;
+        padding-top: 0;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        /*padding-bottom: 4rem;*/
+        border-radius: 2rem;
+    }
+
+    .faq-card__hero {
+        width: 100%;
+    }
+
+    .faq-card__hero-main--desktop {
+        display: none;
+    }
+
+    .faq-card__hero-main--mobile {
+        display: block;
+        margin-top: -110px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .faq-card__hero-box {
+        display: none;
+    }
+
+    .faq-card__content {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        margin-top: 4rem;
+    }
+
+    .faq-card__content h1 {
+        text-align: center;
+    }
 }
