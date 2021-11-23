@@ -56,6 +56,10 @@ button:active {
     width: 100vw;
 }
 
+.double-bag {
+    position: relative;
+}
+
 .faq-card {
     display: flex;
     background-color: var(--white);
@@ -84,8 +88,9 @@ button:active {
 
 .faq-card__hero-box {
     position: absolute;
-    top: 130px;
-    left: -93px;
+    top: 210px;
+    left: -95px;
+    z-index: 2;
 }
 
 .faq-card__hero-shadow {
@@ -162,12 +167,12 @@ button:active {
         padding-top: 0;
         padding-left: 2rem;
         padding-right: 2rem;
-        /*padding-bottom: 4rem;*/
         border-radius: 2rem;
     }
 
     .faq-card__hero {
         width: 100%;
+        text-align: center;
     }
 
     .faq-card__hero-main--desktop {
@@ -175,7 +180,7 @@ button:active {
     }
 
     .faq-card__hero-main--mobile {
-        display: block;
+        display: initial;
         margin-top: -110px;
         margin-left: auto;
         margin-right: auto;
