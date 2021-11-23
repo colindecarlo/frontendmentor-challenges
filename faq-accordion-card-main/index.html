@@ -103,6 +103,7 @@
 
     const onClick = (faqItem) => (event) => {
         event.stopPropagation();
+
         const wasActive = faqItem.classList.contains('active');
         faqItem.classList.toggle('active');
 
@@ -122,11 +123,10 @@
     };
 
     faqItems.forEach((item) => {
-        const button = item.querySelector('button');
-        const question = item.querySelector('.faq-card__question');
-
-        button.addEventListener('click', onClick(item));
-        question.addEventListener('click', onClick(item));
+        const handler = onClick(item);
+        ['button', '.faq-card__question'].forEach((selector) => {
+            item.querySelector(selector).addEventListener('click', handler);
+        })
     })
 </script>
 </body>
