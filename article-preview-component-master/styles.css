@@ -123,6 +123,16 @@ body {
     background-color: var(--dark-gray);
     padding: 1rem 2rem;
     border-radius: 0.5rem;
+    filter: drop-shadow(0 3px 10px hsla(217, 19%, 35%, 50%));
+}
+
+.author-card--share-to::after {
+    content: "";
+    position: absolute;
+    border: 12px solid;
+    border-color: var(--dark-gray) transparent transparent;
+    bottom: -24px;
+    left: calc(50% - 10px);
 }
 
 .author-card--share-to span {
@@ -138,15 +148,3 @@ body {
 .author-card--share-to button:hover {
     fill: var(--gray);
 }
-
-
-
-.arrow-down {
-    width: 0;
-    height: 0;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-
-    border-top: 12px solid var(--dark-gray);
-}
-
