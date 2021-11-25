@@ -35,7 +35,8 @@
             </p>
 
             <div class="author-card">
-                <img width="40px" height="40px" class="author-card--profile-image" src="./images/avatar-michelle.jpg" alt="">
+                <img width="40px" height="40px" class="author-card--profile-image" src="./images/avatar-michelle.jpg"
+                     alt="">
                 <div class="author-card--who-when">
                     <div class="author-card--author">Michelle Appleton</div>
                     <div class="author-card--publication-date">28 Jun 2020</div>
@@ -79,15 +80,29 @@
 </div>
 
 <script>
+    const popOver = document.querySelector('.author-card--share-pop-over');
+    const shareButton = document.querySelector('.author-card--share>button');
+    const shareSites = document.querySelectorAll('.author-card--share-to button');
+
     const onClick = () => {
-        const popOver = document.querySelector('.author-card--share-pop-over');
         popOver.classList.toggle('visible');
         shareButton.classList.toggle('clicked');
     };
-    const shareButton = document.querySelector('.author-card--share>button');
-    const shareSites = document.querySelectorAll('.author-card--share-to button');
+
     shareSites.forEach(site => site.addEventListener('click', onClick))
     shareButton.addEventListener('click', onClick)
+
+    document.addEventListener('keydown', (event) => {
+        if (event.code !== 'Escape') {
+            return;
+        }
+
+        if (!shareButton.classList.contains('clicked')) {
+            return;
+        }
+
+        onClick();
+    })
 </script>
 </body>
 </html>
