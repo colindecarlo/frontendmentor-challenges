@@ -131,6 +131,16 @@ body {
     letter-spacing: 0.5rem;
 }
 
+.author-card--share-to button {
+    fill: var(--white);
+}
+
+.author-card--share-to button:hover {
+    fill: var(--gray);
+}
+
+
+
 .arrow-down {
     width: 0;
     height: 0;
