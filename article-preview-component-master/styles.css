@@ -30,7 +30,6 @@ body {
     width: 750px;
     height: 280px;
     background-color: var(--white);
-    /*overflow: hidden;*/
     border-radius: 0.75rem;
     box-shadow: 5px 15px 20px 5px hsla(217, 19%, 35%, 10%);
 }
@@ -53,7 +52,7 @@ body {
     align-items: center;
 }
 
-.article-preview img {
+.article-preview>img {
     border-radius: 0.75rem 0 0 0.75rem;
 }
 
