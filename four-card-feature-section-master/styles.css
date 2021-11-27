@@ -117,3 +117,31 @@ header {
 .feature-card--blue {
     border-color: var(--blue);
 }
+
+@media screen and (max-width: 375px) {
+    header {
+        width: 80%;
+    }
+
+    .header {
+        font-weight: 600;
+        color: var(--dark-gray);
+        font-size: 1.5rem;
+    }
+
+    .feature-card-group {
+        flex-direction: column;
+    }
+
+    .feature-card-group>div:nth-child(1) {
+        margin-right: inherit;
+    }
+
+    .feature-card-group>div:nth-child(3) {
+        margin-left: inherit;
+    }
+
+    .feature-card {
+        width: 80%;
+    }
+}
