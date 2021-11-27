@@ -131,14 +131,22 @@ header {
 
     .feature-card-group {
         flex-direction: column;
+        align-items: center;
     }
 
     .feature-card-group>div:nth-child(1) {
-        margin-right: inherit;
+        margin: auto;
+    }
+
+    .feature-card-group>div:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
     }
 
     .feature-card-group>div:nth-child(3) {
-        margin-left: inherit;
+        margin: 1.5rem auto;
     }
 
     .feature-card {
