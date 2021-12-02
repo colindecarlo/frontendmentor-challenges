@@ -82,8 +82,8 @@ html {
 }
 
 .email-input {
+    position: relative;
     display: flex;
-    /*padding: 1rem;*/
     border-style: solid;
     border-width: 1px;
     border-color: var(--gray-red);
@@ -92,12 +92,18 @@ html {
     margin-top: 3rem;
 }
 
+.email-input.invalid {
+    border-width: 2px;
+    border-color: var(--soft-red);
+}
+
 .email-input input {
     background-color: transparent;
     border: 0;
     font: inherit;
     color: inherit;
 
+    padding: 1rem;
     margin-left: 2rem;
     font-size: 1.25rem;
 
@@ -109,10 +115,26 @@ html {
 }
 
 .email-input button {
-    padding: 1rem 2.5rem;
-    height: 100%;
+    position: absolute;
+    right: -2px;
+    bottom: -2px;
+    padding: 1.1rem 3rem;
     background-image: linear-gradient(135deg, var(--soft-pink), var(--pink));
     border-radius: 2rem;
 
-    box-shadow: 0 5px 15px 5px hsla(0, 74%, 74%, 0.25);
+    box-shadow: 0 7px 15px 5px hsla(0, 36%, 70%, 0.35);
+}
+
+.email-input button:hover {
+    right: -2px;
+    bottom: -3px;
+    padding: 1.15rem 3rem;
+    background-color: var(--soft-pink);
+    background-image: none;
+}
+
+.email-input.invalid button {
+    right: -2px;
+    bottom: -3px;
+    padding: 1.15rem 3rem;
 }
