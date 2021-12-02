@@ -90,6 +90,7 @@ html {
     border-radius: 2rem;
 
     margin-top: 3rem;
+    transition: border 100ms ease;
 }
 
 .email-input.invalid {
@@ -137,4 +138,30 @@ html {
     right: -2px;
     bottom: -3px;
     padding: 1.15rem 3rem;
+}
+
+.input-error {
+    position: absolute;
+    top: 1rem;
+    right: 7rem;
+    opacity: 0;
+    transition: opacity 300ms ease;
+}
+
+.input-error.invalid {
+    opacity: 100%;
+}
+
+.error {
+    color: var(--gray-red);
+    margin-top: 0.25rem;
+    margin-left: 3rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 300ms ease;
+}
+
+.error.invalid {
+    visibility: visible;
+    opacity: 100;
 }
