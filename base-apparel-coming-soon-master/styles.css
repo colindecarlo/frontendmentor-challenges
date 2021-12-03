@@ -37,6 +37,10 @@ html {
     object-fit: cover;
 }
 
+.hero--mobile {
+    display: none;
+}
+
 .copy {
     flex: 1;
     background-image: url("./images/bg-pattern-desktop.svg"), linear-gradient(135deg, var(--white), var(--ultra-light-red));;
@@ -60,6 +64,8 @@ html {
 
 .logo {
     display: block;
+    width: 55%;
+    margin: 4rem auto;
 }
 
 .heading {
@@ -164,4 +170,65 @@ html {
 .error.invalid {
     visibility: visible;
     opacity: 100;
+}
+
+@media screen and (max-width: 375px) {
+    .hero--desktop {
+        display: none;
+    }
+
+    .hero--mobile {
+        display: block;
+    }
+
+    .content {
+        width: 85%;
+        text-align: center;
+        font-size: 0.9rem;
+        margin-top: 3rem;
+    }
+
+    .heading {
+        font-size: 2.5rem;
+        margin-top: 0;
+    }
+
+    .email-input button {
+        bottom: -1px;
+        padding: 0.9rem 2rem;
+    }
+
+    .email-input button:hover {
+        right: -2px;
+        bottom: -2px;
+        padding: 1rem 2rem;
+        background-color: var(--soft-pink);
+        background-image: none;
+    }
+
+    .email-input input {
+        padding: 1rem;
+        margin-left: 1.5rem;
+        font-size: 1rem;
+        padding-left: 0;
+    }
+
+    .email-input.invalid button {
+        bottom: -2px;
+        padding: 1rem 2rem;
+    }
+
+    .logo {
+        width: 90%;
+        margin-bottom: 1.5rem;
+    }
+
+    .error {
+        text-align: left;
+        margin-left: 1.5rem;
+    }
+
+    .input-error {
+        right: 5rem;
+    }
 }
