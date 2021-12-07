@@ -1,29 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link href="./images/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <title>Frontend Mentor | Intro component with sign up form</title>
+    <link href="styles.css" rel="stylesheet">
+
+    <title>Frontend Mentor | Intro component with sign up form</title>
 </head>
 <body>
 
-  Learn to code by watching others
+<div class="container flex mt-10">
+    <div class="pitch">
+        <h1 class="pitch-heading">Learn to code by watching others</h1>
 
-  See how experienced developers solve problems in real-time. Watching scripted tutorials is great,
-  but understanding how developers think is invaluable.
+        <p class="pitch-content">
+            See how experienced developers solve problems in real-time. Watching scripted
+            tutorials is great, but understanding how developers think is invaluable.
+        </p>
+    </div>
 
-  Try it free 7 days then $20/mo. thereafter
+    <div class="signup">
+        <div class="pricing">
+            <span class="pricing--emphasis">Try it free 7 days</span> then $20/mo. thereafter
+        </div>
 
-  First Name
-  Last Name
-  Email Address
-  Password
 
-  Claim your free trial
+        <form action="#">
+            <input placeholder="First Name" type="text"/>
+            <input placeholder="Last Name" type="text"/>
+            <input placeholder="Email Address" type="text"/>
+            <input placeholder="Password" type="password"/>
 
-  By clicking the button, you are agreeing to our Terms and Services
+            <button type="submit">Claim your free trial</button>
+
+            <p class="tos">
+                By clicking the button, you are agreeing to our <a href="#">Terms and Services</a>
+            </p>
+        </form>
+    </div>
+</div>
 </body>
 </html>
