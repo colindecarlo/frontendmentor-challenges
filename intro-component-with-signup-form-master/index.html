@@ -33,10 +33,58 @@
 
 
         <form action="#">
-            <input placeholder="First Name" type="text"/>
-            <input placeholder="Last Name" type="text"/>
-            <input placeholder="Email Address" type="text"/>
-            <input placeholder="Password" type="password"/>
+            <div class="input">
+                <input name="first_name" placeholder="First Name" type="text"/>
+                <svg height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="none" fill-rule="evenodd">
+                        <circle cx="12" cy="12" fill="#FF7979" r="12"/>
+                        <rect fill="#FFF" height="9" rx="1" width="2" x="11" y="6"/>
+                        <rect fill="#FFF" height="2" rx="1" width="2" x="11" y="17"/>
+                    </g>
+                </svg>
+                <div class="error-message">
+                    First Name cannot be empty
+                </div>
+            </div>
+            <div class="input">
+                <input name="last_name" placeholder="Last Name" type="text"/>
+                <svg height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="none" fill-rule="evenodd">
+                        <circle cx="12" cy="12" fill="#FF7979" r="12"/>
+                        <rect fill="#FFF" height="9" rx="1" width="2" x="11" y="6"/>
+                        <rect fill="#FFF" height="2" rx="1" width="2" x="11" y="17"/>
+                    </g>
+                </svg>
+                <div class="error-message">
+                    Last Name cannot be empty
+                </div>
+            </div>
+            <div class="input">
+                <input name="email" placeholder="Email Address" type="text"/>
+                <svg height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="none" fill-rule="evenodd">
+                        <circle cx="12" cy="12" fill="#FF7979" r="12"/>
+                        <rect fill="#FFF" height="9" rx="1" width="2" x="11" y="6"/>
+                        <rect fill="#FFF" height="2" rx="1" width="2" x="11" y="17"/>
+                    </g>
+                </svg>
+                <div class="error-message">
+                    Looks like this is not an email
+                </div>
+            </div>
+            <div class="input">
+                <input name="password" placeholder="Password" type="password"/>
+                <svg height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="none" fill-rule="evenodd">
+                        <circle cx="12" cy="12" fill="#FF7979" r="12"/>
+                        <rect fill="#FFF" height="9" rx="1" width="2" x="11" y="6"/>
+                        <rect fill="#FFF" height="2" rx="1" width="2" x="11" y="17"/>
+                    </g>
+                </svg>
+                <div class="error-message">
+                    Password cannot be empty
+                </div>
+            </div>
 
             <button type="submit">Claim your free trial</button>
 
@@ -46,5 +94,36 @@
         </form>
     </div>
 </div>
+
+<script>
+    const submitButton = document.querySelector('button');
+
+    function validate() {
+        const firstName = document.querySelector('input[name=first_name]');
+        const lastName = document.querySelector('input[name=last_name]');
+        const email = document.querySelector('input[name=email]');
+        const password = document.querySelector('input[type=password]');
+
+        const required = [firstName, lastName, password];
+        required.forEach(input => {
+            if (input.value === '') {
+                input.parentElement.classList.add('error');
+            } else {
+                input.parentElement.classList.remove('error');
+            }
+        })
+
+        if (/\w+@\w+\.\w{2,3}/.test(email.value) === false) {
+            email.parentElement.classList.add('error');
+        } else {
+            email.parentElement.classList.remove('error');
+        }
+    }
+
+    submitButton.addEventListener('click', (evt) => {
+        evt.preventDefault();
+        validate();
+    })
+</script>
 </body>
 </html>
