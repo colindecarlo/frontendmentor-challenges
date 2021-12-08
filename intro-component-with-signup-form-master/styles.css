@@ -187,3 +187,35 @@ body {
 .tos a:visited {
     color: var(--red);
 }
+
+@media screen and (max-width: 375px) {
+    .sm-flex-column {
+        flex-direction: column;
+    }
+
+    .sm-mt-5 {
+        margin-top: 5rem;
+    }
+
+    .pitch {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    .pitch-heading {
+        font-size: 1.75rem;
+    }
+
+    .signup {
+        margin-top: 2rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        width: 100%;
+    }
+
+    .signup form {
+        padding: 1rem;
+    }
+}
