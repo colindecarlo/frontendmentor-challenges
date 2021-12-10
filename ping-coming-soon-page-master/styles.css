@@ -37,7 +37,6 @@ html {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-
 }
 
 .coming-soon_heading--slim {
@@ -160,5 +159,54 @@ html {
     font-size: .7rem;
     margin-bottom: 2rem;
     margin-top: 1.5rem;
+}
+
+@media screen and (max-width: 375px) {
+    .coming-soon_heading {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+    }
+
+    .coming-soon_cta {
+        font-size: 0.9rem;
+    }
+
+    .coming-soon .input {
+        display: block;
+        margin: auto;
+        width: 90%
+    }
+
+    .coming-soon .input .error-message {
+        display: none;
+        visibility: visible;
+    }
+
+    .coming-soon .input.error .error-message {
+        display: block;
+        margin: auto;
+        margin-bottom: 1.5rem;
+        margin-top: 0.25rem;
+        padding: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .coming-soon .input input {
+        width: 100%;
+    }
+
+    .coming-soon button {
+        display: block;
+        margin: auto;
+        margin-top: 0.5rem;
+        width: 90%;
+    }
+
+    .coming-soon img {
+        width: 90%;
+    }
 }
 
