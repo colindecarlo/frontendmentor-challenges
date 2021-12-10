@@ -2,9 +2,11 @@
     --blue: hsl(223, 87%, 63%);
 
     --gray: hsl(0, 0%, 59%);
-    --pale-blue: hsl(223, 100%, 88%);
+    --white: hsl(0, 0%, 100%);
 
+    --pale-blue: hsl(223, 100%, 88%);
     --very-dark-blue: hsl(209, 33%, 12%);
+
     --light-red: hsl(354, 100%, 66%);
 }
 
@@ -47,20 +49,49 @@ html {
     margin-top: 2rem;
 }
 
-.coming-soon input {
+.coming-soon .input {
+    display: inline-block;
+}
+
+.coming-soon .input input {
     border-color: var(--gray);
     border-radius: 2rem;
     border-style: solid;
     border-width: 1px;
-    color: var(--gray);
+    color: var(--very-dark-blue);
     font-size: 0.9rem;
     margin-right: 1rem;
-    padding: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1rem;
+    padding-right: 0;
+    padding-top: 0.75rem;
+
     width: 25rem;
 }
 
-.coming-soon input:focus {
+.coming-soon .input input::placeholder {
+    color: var(--gray);
+}
+
+.coming-soon .input.error input {
+    border-color: var(--light-red);
+}
+
+.coming-soon .input input:focus {
     outline: none;
+}
+
+.coming-soon .error-message {
+    color: var(--light-red);
+    font-size: .75rem;
+    margin-top: 0.25rem;
+    padding-left: 1rem;
+    text-align: left;
+    visibility: hidden;
+}
+
+.coming-soon .error .error-message {
+    visibility: visible;
 }
 
 .coming-soon button {
@@ -73,11 +104,17 @@ html {
     font-weight: 500;
     letter-spacing: .05rem;
     padding: 0.75rem 2.5rem;
+    vertical-align: top;
+}
+
+.coming-soon button:hover {
+    background-color: #6A93FC;
+    cursor: pointer;
 }
 
 .coming-soon img {
     display: inline-block;
-    margin-top: 5rem;
+    margin-top: 4rem;
     width: 645px;
 }
 
@@ -85,7 +122,7 @@ html {
     align-items: center;
     display: flex;
     justify-content: center;
-    margin-top: 5rem;
+    margin-top: 4rem;
 }
 
 .coming-soon_social-links {
@@ -94,11 +131,17 @@ html {
     border-radius: 50%;
     border-style: solid;
     border-width: 1px;
+    color: var(--blue);
     display: flex;
     height: 32px;
     justify-content: center;
     padding: .25rem;
     width: 32px;
+}
+
+.coming-soon_social-links:hover {
+    background-color: var(--blue);
+    color: var(--white);
 }
 
 .coming-soon_social-links:nth-of-type(2) {
@@ -107,7 +150,7 @@ html {
 }
 
 .coming-soon_social-links svg {
-    color: var(--blue);
+    color: inherit;
     height: 15px;
     width: 15px;
 }
