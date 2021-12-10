@@ -1,0 +1,121 @@
+:root {
+    --blue: hsl(223, 87%, 63%);
+
+    --gray: hsl(0, 0%, 59%);
+    --pale-blue: hsl(223, 100%, 88%);
+
+    --very-dark-blue: hsl(209, 33%, 12%);
+    --light-red: hsl(354, 100%, 66%);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+html {
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 20px;
+}
+
+.container {
+    margin: auto;
+    max-width: 1440px;
+}
+
+.coming-soon {
+    padding-top: 5rem;
+    text-align: center;
+}
+
+.coming-soon_heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+
+}
+
+.coming-soon_heading--slim {
+    color: var(--gray);
+    font-weight: 400;
+}
+
+.coming-soon form {
+    margin-top: 2rem;
+}
+
+.coming-soon input {
+    border-color: var(--gray);
+    border-radius: 2rem;
+    border-style: solid;
+    border-width: 1px;
+    color: var(--gray);
+    font-size: 0.9rem;
+    margin-right: 1rem;
+    padding: 0.75rem;
+    width: 25rem;
+}
+
+.coming-soon input:focus {
+    outline: none;
+}
+
+.coming-soon button {
+    background-color: var(--blue);
+    border-radius: 2rem;
+    border-style: none;
+    box-shadow: 0 5px 8px 3px hsla(223, 87%, 63%, .2);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: .05rem;
+    padding: 0.75rem 2.5rem;
+}
+
+.coming-soon img {
+    display: inline-block;
+    margin-top: 5rem;
+    width: 645px;
+}
+
+.social {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.coming-soon_social-links {
+    align-items: center;
+    border-color: var(--pale-blue);
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 1px;
+    display: flex;
+    height: 32px;
+    justify-content: center;
+    padding: .25rem;
+    width: 32px;
+}
+
+.coming-soon_social-links:nth-of-type(2) {
+    margin-left: .5rem;
+    margin-right: .5rem;
+}
+
+.coming-soon_social-links svg {
+    color: var(--blue);
+    height: 15px;
+    width: 15px;
+}
+
+.copyright {
+    color: var(--gray);
+    font-size: .7rem;
+    margin-bottom: 2rem;
+    margin-top: 1.5rem;
+}
+
