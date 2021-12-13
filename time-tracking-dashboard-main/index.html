@@ -29,9 +29,9 @@
         </div>
 
         <div class="flex md:flex-col md:items-start md:gap-3 justify-between bg-transparent p-6">
-            <button class="text-slate-50 hover:text-slate-50">Daily</button>
-            <button class="text-slate-400 hover:text-slate-50">Weekly</button>
-            <button class="text-slate-400 hover:text-slate-50">Monthly</button>
+            <button class="text-slate-50 hover:text-slate-50" id="daily">Daily</button>
+            <button class="text-slate-400 hover:text-slate-50" id="weekly">Weekly</button>
+            <button class="text-slate-400 hover:text-slate-50" id="monthly">Monthly</button>
         </div>
     </div>
 
@@ -54,15 +54,15 @@
                     </svg>
                 </button>
             </div>
-            <div class="flex md:flex-col md:items-start items-center md:justify-end mt-4">
+            <div class="flex md:flex-col md:items-start items-center md:justify-end mt-4" data-series="daily">
                 <span class="text-4xl font-light">5hrs</span> <!-- daily -->
                 <span class="text-base text-slate-400 ml-auto md:ml-0 md:mt-2">Previous - 7hrs</span> <!-- daily -->
             </div>
-            <div class="hidden items-center mt-4">
+            <div class="hidden md:flex-col md:items-start items-center md:justify-end mt-4" data-series="weekly">
                 <span class="text-4xl font-light">32hrs</span> <!-- weekly -->
                 <span class="text-base text-slate-400 ml-auto md:ml-0 md:mt-2">Previous - 36hrs</span> <!-- weekly -->
             </div>
-            <div class="hidden items-center mt-4">
+            <div class="hidden md:flex-col md:items-start items-center md:justify-end mt-4" data-series="monthly">
                 <span class="text-4xl font-light">103hrs</span> <!-- monthly -->
                 <span class="text-base text-slate-400 ml-auto md:ml-0 md:mt-2">Previous - 128hrs</span> <!-- monthly -->
             </div>
@@ -88,15 +88,15 @@
                     </svg>
                 </button>
             </div>
-            <div class="flex md:flex-col md:items-start items-center md:justify-end mt-4">
+            <div class="flex md:flex-col md:items-start items-center md:justify-end mt-4" data-series="daily">
                 <span class="text-4xl font-light">1hr</span> <!-- daily -->
                 <span class="text-base text-slate-400 ml-auto md:ml-0 md:mt-2">Previous - 2hrs</span> <!-- daily -->
             </div>
-            <div class="hidden items-center mt-4">
+            <div class="hidden md:flex-col md:items-start items-center md:justify-end mt-4" data-series="weekly">
                 <span class="text-4xl font-light">10hrs</span> <!-- weekly -->
                 <span class="text-base text-slate-400 ml-auto md:ml-0 md:mt-2">Previous - 8hrs</span> <!-- weekly -->
             </div>
-            <div class="hidden items-center mt-4">
+            <div class="hidden md:flex-col md:items-start items-center md:justify-end mt-4" data-series="monthly">
                 <span class="text-4xl font-light">23hrs</span> <!-- monthly -->
                 <span class="text-base text-slate-400 ml-auto md:ml-0 md:mt-2">Previous - 29hrs</span> <!-- monthly -->
             </div>
@@ -122,15 +122,15 @@
                     </svg>
                 </button>
             </div>
-            <div class="flex md:flex-col md:items-start items-center md:justify-end mt-4">
+            <div class="flex md:flex-col md:items-start items-center md:justify-end mt-4" data-series="daily">
                 <span class="text-4xl font-light">0hrs</span> <!-- daily -->
                 <span class="text-base text-slate-400 ml-auto md:ml-0 md:mt-2">Previous - 1hr</span> <!-- daily -->
             </div>
-            <div class="hidden items-center mt-4">
+            <div class="hidden md:flex-col md:items-start items-center md:justify-end mt-4" data-series="weekly">
                 <span class="text-4xl font-light">4hrs</span> <!-- weekly -->
                 <span class="text-base text-slate-400 ml-auto md:ml-0 md:mt-2">Previous - 7hrs</span> <!-- weekly -->
             </div>
-            <div class="hidden items-center mt-4">
+            <div class="hidden md:flex-col md:items-start items-center md:justify-end mt-4" data-series="monthly">
                 <span class="text-4xl font-light">13hrs</span> <!-- monthly -->
                 <span class="text-base text-slate-400 ml-auto md:ml-0 md:mt-2">Previous - 19hrs</span> <!-- monthly -->
             </div>
@@ -156,15 +156,15 @@
                     </svg>
                 </button>
             </div>
-            <div class="flex md:flex-col md:items-start items-center md:justify-end mt-4">
+            <div class="flex md:flex-col md:items-start items-center md:justify-end mt-4" data-series="daily">
                 <span class="text-4xl font-light">1hr</span> <!-- daily -->
                 <span class="text-base text-slate-400 ml-auto md:ml-0 md:mt-2">Previous - 1hr</span> <!-- daily -->
             </div>
-            <div class="hidden items-center mt-4">
+            <div class="hidden md:flex-col md:items-start items-center md:justify-end mt-4" data-series="weekly">
                 <span class="text-4xl font-light">4hrs</span> <!-- weekly -->
                 <span class="text-base text-slate-400 ml-auto md:ml-0 md:mt-2">Previous - 5hrs</span> <!-- weekly -->
             </div>
-            <div class="hidden items-center mt-4">
+            <div class="hidden md:flex-col md:items-start items-center md:justify-end mt-4" data-series="monthly">
                 <span class="text-4xl font-light">11hrs</span> <!-- monthly -->
                 <span class="text-base text-slate-400 ml-auto md:ml-0 md:mt-2">Previous - 18hrs</span> <!-- monthly -->
             </div>
@@ -191,15 +191,15 @@
                     </svg>
                 </button>
             </div>
-            <div class="flex md:flex-col md:items-start items-center md:justify-end mt-4">
+            <div class="flex md:flex-col md:items-start items-center md:justify-end mt-4" data-series="daily">
                 <span class="text-4xl font-light">1hr</span> <!-- daily -->
                 <span class="text-base text-slate-400 ml-auto md:ml-0 md:mt-2">Previous - 3hrs</span> <!-- daily -->
             </div>
-            <div class="hidden items-center mt-4">
+            <div class="hidden md:flex-col md:items-start items-center md:justify-end mt-4" data-series="weekly">
                 <span class="text-4xl font-light">5hrs</span> <!-- weekly -->
                 <span class="text-base text-slate-400 ml-auto md:ml-0 md:mt-2">Previous - 10hrs</span> <!-- weekly -->
             </div>
-            <div class="hidden items-center mt-4">
+            <div class="hidden md:flex-col md:items-start items-center md:justify-end mt-4" data-series="monthly">
                 <span class="text-4xl font-light">21hrs</span> <!-- monthly -->
                 <span class="text-base text-slate-400 ml-auto md:ml-0 md:mt-2">Previous - 23hrs</span> <!-- monthly -->
             </div>
@@ -225,20 +225,76 @@
                     </svg>
                 </button>
             </div>
-            <div class="flex md:flex-col md:items-start items-center md:justify-end mt-4">
+            <div class="flex md:flex-col md:items-start items-center md:justify-end mt-4" data-series="daily">
                 <span class="text-4xl font-light">0hrs</span> <!-- daily -->
                 <span class="text-base text-slate-400 ml-auto md:ml-0 md:mt-2">Previous - 1hr</span> <!-- daily -->
             </div>
-            <div class="hidden items-center mt-4">
+            <div class="hidden md:flex-col md:items-start items-center md:justify-end mt-4" data-series="weekly">
                 <span class="text-4xl font-light">2hrs</span> <!-- weekly -->
                 <span class="text-base text-slate-400 ml-auto md:ml-0 md:mt-2">Previous - 2hrs</span> <!-- weekly -->
             </div>
-            <div class="hidden items-center mt-4">
+            <div class="hidden md:flex-col md:items-start items-center md:justify-end mt-4" data-series="monthly">
                 <span class="text-4xl font-light">7hrs</span> <!-- monthly -->
                 <span class="text-base text-slate-400 ml-auto md:ml-0 md:mt-2">Previous - 11hrs</span> <!-- monthly -->
             </div>
         </div>
     </div>
 </div>
+
+<script>
+
+    const daily = document.querySelector('#daily');
+    const weekly = document.querySelector('#weekly');
+    const monthly = document.querySelector('#monthly');
+
+    const series = {
+        daily: document.querySelectorAll('div[data-series=daily]'),
+        weekly: document.querySelectorAll('div[data-series=weekly]'),
+        monthly: document.querySelectorAll('div[data-series=monthly]'),
+    }
+
+    const hideElement = element => {
+        element.classList.add('hidden');
+        element.classList.remove('flex');
+    };
+
+    const showElement = element => {
+        element.classList.add('flex');
+        element.classList.remove('hidden');
+    }
+
+    const addEventListeners = (target, others) => {
+        target.button.addEventListener('click', () => {
+            target.button.classList.remove('text-slate-400');
+            target.button.classList.add('text-slate-50');
+            others.forEach(({button: otherButton}) => {
+                otherButton.classList.remove('text-slate-50');
+                otherButton.classList.add('text-slate-400');
+            });
+
+            target.series.forEach(showElement)
+            others.forEach(({series: otherSeries}) => {
+                otherSeries.forEach(hideElement);
+            });
+        });
+    }
+
+    addEventListeners({button: daily, series: series.daily}, [
+        {button: weekly, series: series.weekly},
+        {button: monthly, series: series.monthly}
+    ]);
+
+    addEventListeners({button: weekly, series: series.weekly}, [
+        {button: daily, series: series.daily},
+        {button: monthly, series: series.monthly}
+    ]);
+
+    addEventListeners({button: monthly, series: series.monthly}, [
+        {button: daily, series: series.daily},
+        {button: weekly, series: series.weekly}
+    ]);
+</script>
+
+
 </body>
 </html>
