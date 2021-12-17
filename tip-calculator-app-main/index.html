@@ -22,77 +22,78 @@
           fill="#3D6666"/>
 </svg>
 
-<div class="bg-white w-full p-8 grow rounded-t-2xl">
-    <label class="font-bold" for="bill-amount">Bill</label>
-    <input class="bg-[url('./images/icon-dollar.svg')] bg-no-repeat bg-[left_1rem_center]
+<div class="bg-white w-full p-8 grow rounded-t-2xl md:w-3/4 md:grow-0 md:rounded-b-2xl md:grid md:grid-cols-2 md:gap-4">
+    <div>
+        <label class="font-bold" for="bill-amount">Bill</label>
+        <input class="bg-[url('./images/icon-dollar.svg')] bg-no-repeat bg-[left_1rem_center]
                   w-full bg-[#f3f8fa] font-bold text-2xl text-[#053f3f] text-right py-2 pr-4 pl-10 mt-2
                   focus-visible:ring-2 focus-visible:ring-[#25c2ad] outline-none rounded-md"
-           id="bill-amount"
-           type="text"
-           value="142.55"/>
-
-    <div class="mt-8 font-bold">Select Tip %</div>
-    <div class="grid grid-cols-2 gap-4 mt-4">
-        <button class="bg-[#00474b] hover:bg-[#9fe8df] rounded-md font-bold text-white hover:text-[#004b50] text-center py-2 text-2xl">
-            5%
-        </button>
-        <button class="bg-[#00474b] hover:bg-[#9fe8df] rounded-md font-bold text-white hover:text-[#004b50] text-center py-2 text-2xl">
-            10%
-        </button>
-        <button class="bg-[#00474b] hover:bg-[#9fe8df] rounded-md font-bold text-white hover:text-[#004b50] text-center py-2 text-2xl">
-            15%
-        </button>
-        <button class="bg-[#00474b] hover:bg-[#9fe8df] rounded-md font-bold text-white hover:text-[#004b50] text-center py-2 text-2xl">
-            25%
-        </button>
-        <button class="bg-[#00474b] hover:bg-[#9fe8df] rounded-md font-bold text-white hover:text-[#004b50] text-center py-2 text-2xl">
-            50%
-        </button>
-        <label class="hidden" for="custom-tip">Custom Tip</label>
-        <input class="
-                  w-full bg-[#f3f8fa] font-bold text-2xl text-[#053f3f] text-right py-2 pr-4 pl-10 mt-2
-                  focus-visible:ring-2 focus-visible:ring-[#25c2ad] outline-none rounded-md"
-               id="custom-tip"
-               placeholder="Custom"
+               id="bill-amount"
                type="text"
-        />
-    </div>
+               value="142.55"/>
 
-    <div class="flex justify-between mt-8">
-        <label class="font-bold" for="num-people">Number of People</label>
-        <span class="hidden text-[#b67f6f]" id="num-people-error">Can't be zero</span>
-    </div>
-    <input class="bg-[url('./images/icon-person.svg')] bg-no-repeat bg-[left_1rem_center]
+        <div class="mt-8 font-bold">Select Tip %</div>
+        <div class="grid grid-cols-2 gap-4 mt-4">
+            <button class="bg-[#00474b] hover:bg-[#9fe8df] rounded-md font-bold text-white hover:text-[#004b50] text-center py-2 text-2xl">
+                5%
+            </button>
+            <button class="bg-[#00474b] hover:bg-[#9fe8df] rounded-md font-bold text-white hover:text-[#004b50] text-center py-2 text-2xl">
+                10%
+            </button>
+            <button class="bg-[#00474b] hover:bg-[#9fe8df] rounded-md font-bold text-white hover:text-[#004b50] text-center py-2 text-2xl">
+                15%
+            </button>
+            <button class="bg-[#00474b] hover:bg-[#9fe8df] rounded-md font-bold text-white hover:text-[#004b50] text-center py-2 text-2xl">
+                25%
+            </button>
+            <button class="bg-[#00474b] hover:bg-[#9fe8df] rounded-md font-bold text-white hover:text-[#004b50] text-center py-2 text-2xl">
+                50%
+            </button>
+            <label class="hidden" for="custom-tip">Custom Tip</label>
+            <input class="
                   w-full bg-[#f3f8fa] font-bold text-2xl text-[#053f3f] text-right py-2 pr-4 pl-10 mt-2
                   focus-visible:ring-2 focus-visible:ring-[#25c2ad] outline-none rounded-md"
-           id="num-people"
-           type="text"
-           value="5"/>
+                   id="custom-tip"
+                   placeholder="Custom"
+                   type="text"
+            />
+        </div>
 
+        <div class="flex justify-between mt-8">
+            <label class="font-bold" for="num-people">Number of People</label>
+            <span class="hidden text-[#b67f6f]" id="num-people-error">Can't be zero</span>
+        </div>
+        <input class="bg-[url('./images/icon-person.svg')] bg-no-repeat bg-[left_1rem_center]
+                  w-full bg-[#f3f8fa] font-bold text-2xl text-[#053f3f] text-right py-2 pr-4 pl-10 mt-2
+                  focus-visible:ring-2 focus-visible:ring-[#25c2ad] outline-none rounded-md"
+               id="num-people"
+               type="text"
+               value="5"/>
+    </div>
 
-    <div class="bg-[#00474b] rounded-xl mt-8 p-4">
-        <div class="flex justify-between items-center">
-            <div class="w-1/2 text-white">
+    <div class="bg-[#00474b] rounded-xl mt-8 p-4 md:mt-0 md:flex md:flex-col">
+        <div class="flex justify-between items-center md:mt-8 md:items-start">
+            <div class="w-1/2 text-white md:text-xl">
                 Tip Amount
-                <span class="block text-sm text-[#5f9197]">/ person</span>
+                <span class="block text-sm text-[#5f9197] md:text-lg">/ person</span>
             </div>
-            <div class="w-1/2 text-right text-2xl text-[#35bfb0] font-bold">
+            <div class="w-1/2 text-right text-2xl text-[#35bfb0] font-bold md:text-5xl">
                 $0.00
             </div>
         </div>
 
-        <div class="flex justify-between items-center mt-4">
-            <div class="w-1/2 text-white">
+        <div class="flex justify-between items-center mt-4 md:mt-8 md:items-start">
+            <div class="w-1/2 text-white md:text-xl">
                 Total
-                <span class="block text-sm text-[#5f9197]">/ person</span>
+                <span class="block text-sm text-[#5f9197] md:text-lg">/ person</span>
             </div>
-            <div class="w-1/2 text-right text-2xl text-[#35bfb0] font-bold">
+            <div class="w-1/2 text-right text-2xl text-[#35bfb0] font-bold md:text-5xl">
                 $0.00
             </div>
         </div>
 
 
-        <button class="w-full py-2 mt-6 bg-[#25c2ad] hover:bg-[#9fe8df] text-[#015154] rounded-md uppercase text-xl font-bold">
+        <button class="w-full py-2 mt-6 bg-[#25c2ad] hover:bg-[#9fe8df] text-[#015154] rounded-md uppercase text-xl font-bold md:mt-auto">
             Reset
         </button>
     </div>
