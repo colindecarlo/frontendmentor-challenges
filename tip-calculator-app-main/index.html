@@ -34,19 +34,24 @@
 
         <div class="mt-8 font-bold">Select Tip %</div>
         <div class="grid grid-cols-2 gap-4 mt-4">
-            <button class="bg-[#00474b] hover:bg-[#9fe8df] rounded-md font-bold text-white hover:text-[#004b50] text-center py-2 text-2xl">
+            <button class="bg-[#00474b] hover:bg-[#9fe8df] rounded-md font-bold text-white hover:text-[#004b50] text-center py-2 text-2xl"
+                    data-tip-amount="0.05">
                 5%
             </button>
-            <button class="bg-[#00474b] hover:bg-[#9fe8df] rounded-md font-bold text-white hover:text-[#004b50] text-center py-2 text-2xl">
+            <button class="bg-[#00474b] hover:bg-[#9fe8df] rounded-md font-bold text-white hover:text-[#004b50] text-center py-2 text-2xl"
+                    data-tip-amount="0.1">
                 10%
             </button>
-            <button class="bg-[#00474b] hover:bg-[#9fe8df] rounded-md font-bold text-white hover:text-[#004b50] text-center py-2 text-2xl">
+            <button class="bg-[#00474b] hover:bg-[#9fe8df] rounded-md font-bold text-white hover:text-[#004b50] text-center py-2 text-2xl"
+                    data-tip-amount="0.15">
                 15%
             </button>
-            <button class="bg-[#00474b] hover:bg-[#9fe8df] rounded-md font-bold text-white hover:text-[#004b50] text-center py-2 text-2xl">
+            <button class="bg-[#00474b] hover:bg-[#9fe8df] rounded-md font-bold text-white hover:text-[#004b50] text-center py-2 text-2xl"
+                    data-tip-amount="0.25">
                 25%
             </button>
-            <button class="bg-[#00474b] hover:bg-[#9fe8df] rounded-md font-bold text-white hover:text-[#004b50] text-center py-2 text-2xl">
+            <button class="bg-[#00474b] hover:bg-[#9fe8df] rounded-md font-bold text-white hover:text-[#004b50] text-center py-2 text-2xl"
+                    data-tip-amount="0.5">
                 50%
             </button>
             <label class="hidden" for="custom-tip">Custom Tip</label>
@@ -77,7 +82,7 @@
                 Tip Amount
                 <span class="block text-sm text-[#5f9197] md:text-lg">/ person</span>
             </div>
-            <div class="w-1/2 text-right text-2xl text-[#35bfb0] font-bold md:text-5xl">
+            <div class="w-1/2 text-right text-2xl text-[#35bfb0] font-bold md:text-5xl" id="tip-per-person">
                 $0.00
             </div>
         </div>
@@ -87,16 +92,127 @@
                 Total
                 <span class="block text-sm text-[#5f9197] md:text-lg">/ person</span>
             </div>
-            <div class="w-1/2 text-right text-2xl text-[#35bfb0] font-bold md:text-5xl">
+            <div class="w-1/2 text-right text-2xl text-[#35bfb0] font-bold md:text-5xl" id="total-payable-per-person">
                 $0.00
             </div>
         </div>
 
 
-        <button class="w-full py-2 mt-6 bg-[#25c2ad] hover:bg-[#9fe8df] text-[#015154] rounded-md uppercase text-xl font-bold md:mt-auto">
+        <button class="w-full py-2 mt-6 bg-[#25c2ad] hover:bg-[#9fe8df] text-[#015154] rounded-md uppercase text-xl font-bold md:mt-auto"
+                id="reset-button">
             Reset
         </button>
     </div>
 </div>
+
+<script>
+    const billAmount = document.querySelector('#bill-amount');
+    const numberOfPeople = document.querySelector('#num-people');
+    const numberOfPeopleError = document.querySelector('#num-people-error');
+
+    const perPersonTotals = {
+        tip: document.querySelector('#tip-per-person'),
+        payable: document.querySelector('#total-payable-per-person')
+    }
+
+    let selectedTip = null;
+    const tipValues = document.querySelectorAll('[data-tip-amount]');
+    const customTip = document.querySelector('#custom-tip');
+    const reset = document.querySelector('#reset-button');
+
+    const otherTips = (tip) => Array.from(tipValues).filter((candidate) => candidate !== tip);
+
+    const calculateTip = () => {
+        if (!selectedTip) {
+            return;
+        }
+
+        const split = numberOfPeople.value;
+
+        if (isNaN(split)) {
+            return;
+        }
+
+        const total = billAmount.value;
+        let calculatedTip = 0;
+        let tipAmount = 0;
+
+        if (selectedTip === customTip) {
+            tipAmount = parseFloat(customTip.value) / 100;
+        } else {
+            tipAmount = parseFloat(selectedTip.dataset.tipAmount);
+        }
+
+        let formatter = Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD'
+        });
+
+        calculatedTip = formatter.format((total * tipAmount) / split);
+
+        const totalPayablePerPerson = formatter.format((total * (1 + tipAmount)) / split);
+
+        perPersonTotals.tip.textContent = calculatedTip === '$NaN' ? "$0.00" : calculatedTip;
+        perPersonTotals.payable.textContent = totalPayablePerPerson === '$NaN' ? "$0.00" : totalPayablePerPerson;
+    };
+
+    tipValues.forEach((tip) => {
+        tip.addEventListener('click', () => {
+            selectedTip = tip;
+
+            tip.classList.remove('bg-[#00474b]')
+            tip.classList.add('bg-[#27c1ae]')
+
+            otherTips(tip).forEach((tip) => {
+                tip.classList.remove('bg-[#27c1ae]')
+                tip.classList.add('bg-[#00474b]')
+            })
+            customTip.classList.remove('ring-2', 'ring-[#27c1ae]')
+
+            calculateTip()
+        })
+    })
+
+    customTip.addEventListener('click', () => {
+        selectedTip = customTip;
+        customTip.classList.add('ring-2', 'ring-[#27c1ae]')
+
+        otherTips(null).forEach((tip) => {
+            tip.classList.remove('bg-[#27c1ae]')
+            tip.classList.add('bg-[#00474b]')
+        })
+    });
+
+    customTip.addEventListener('keyup', calculateTip)
+    billAmount.addEventListener('keyup', calculateTip)
+    numberOfPeople.addEventListener('keyup', () => {
+        const split = numberOfPeople.value;
+        if (isNaN(split) || split < 1) {
+            numberOfPeopleError.classList.remove('hidden');
+            return;
+        }
+
+        numberOfPeopleError.classList.add('hidden');
+        calculateTip()
+    });
+
+    reset.addEventListener('click', () => {
+        // reset tip amounts
+        customTip.classList.remove('ring-2', 'ring-[#27c1ae]')
+        otherTips(null).forEach((tip) => {
+            tip.classList.remove('bg-[#27c1ae]')
+            tip.classList.add('bg-[#00474b]')
+        })
+
+        // reset inputs
+        customTip.value = '';
+        billAmount.value = '0'
+        numberOfPeople.value = 1;
+
+        selectedTip = null;
+    })
+
+</script>
+
 </body>
 </html>
